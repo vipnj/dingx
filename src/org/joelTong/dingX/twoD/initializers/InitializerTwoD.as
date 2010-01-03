@@ -27,12 +27,15 @@ package org.joelTong.dingX.twoD.initializers
 		/* this is the initializer */
 		public function InitializerTwoD(w:int, h:int, fill:uint = 0x000000):void {
 			super();
-			this.graphics.beginFill(fill);
-			this.graphics.drawRect(0, 0, w, h);
+			//this.graphics.beginFill(fill);
+			//this.graphics.drawRect(0, 0, w, h);
 		}
 		
 		/* This function is used for adding visualizations 
 		 * timeToKill > timeToTransit
+		 * 
+		 * BUG: There is a memory leak problem when changing animations.  Use switching with care.
+		 * 
 		 * */
 		public function addVisualizer(visualizer2D:Sprite, timeToKill:Number = 2, 
 										timeToTransit:Number = 1):void {
