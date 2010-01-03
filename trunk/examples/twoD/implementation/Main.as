@@ -25,6 +25,8 @@ package
 	import flash.net.URLRequest;
 	import flash.utils.Timer;
 	import flash.display.StageQuality;
+	import org.joelTong.dingX.common.palette.ColorPattern;
+	import org.joelTong.dingX.common.palette.MinMaxColor32;
 	
 	import org.joelTong.dingX.twoD.initializers.*;
 	import org.joelTong.dingX.twoD.visualizations.*;
@@ -58,10 +60,17 @@ package
 			 * 		Flint Particle System - http://code.google.com/p/flint-particle-system/
 			 * 
 			 * */
-						
+			
+			var pattern:ColorPattern = new ColorPattern();
+			pattern.pushColor(new MinMaxColor32(0xFF0033CC, 0xFF0066CC));
+			pattern.pushColor(new MinMaxColor32(0xFF00CCFF, 0xFF0099FF));
+			 
 			var initializer:InitializerTwoD = new InitializerTwoD(stage.stageWidth, stage.stageHeight);
-			initializer.addVisualizer(new Type3(stage.stageWidth, stage.stageHeight, 20, 20, 200,80));
+			initializer.addVisualizer(new Type3(stage.stageWidth, stage.stageHeight, 30, 50, 200,60,20,pattern));
 			addChild(initializer);
+			
+			
+			
 		}
 		
 	}
