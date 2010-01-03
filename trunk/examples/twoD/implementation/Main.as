@@ -42,7 +42,7 @@ package
 		
 		public function Main():void {
 			//optimize if needed
-			stage.quality = StageQuality.BEST;
+			stage.quality = StageQuality.LOW;
 			
 			//sample sound loading stuff
 			var sound:Sound = new Sound();
@@ -60,7 +60,7 @@ package
 			 * */
 						
 			var initializer:InitializerTwoD = new InitializerTwoD(stage.stageWidth, stage.stageHeight);
-			initializer.addVisualizer(new Type2(stage.stageWidth, stage.stageHeight));
+			initializer.addVisualizer(new Type3(stage.stageWidth, stage.stageHeight, 20, 20, 200,80));
 			addChild(initializer);
 		}
 		

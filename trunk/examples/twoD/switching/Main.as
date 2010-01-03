@@ -12,7 +12,7 @@
 
 /*
  * 
- * This is an example of how you can implement DingX
+ * This is an example of how you can implement DingX and rotate visualizations
  * 
  */
 
@@ -54,6 +54,7 @@ package
 			
 			visuals.push(new Type1(stage.stageWidth, stage.stageHeight));
 			visuals.push(new Type2(stage.stageWidth, stage.stageHeight));
+			visuals.push(new Type3(stage.stageWidth, stage.stageHeight, 20, 20, 200, 80));
 			
 			//sample sound loading stuff
 			var sound:Sound = new Sound();
@@ -83,7 +84,7 @@ package
 		
 		/* Note the auto garbage collection.  Sweet. */
 		private function onTimer(e:TimerEvent):void {
-			initializer.addVisualizer(visuals[Math.round(Math.random())]);
+			initializer.addVisualizer(visuals[Math.round(Math.random() * 2)]);
 			trace(Math.round(Math.random()));
 		}
 		
