@@ -24,7 +24,19 @@ package org.joelTong.dingX.twoD.initializers
 		
 		public var visualizers:Array = new Array();
 		
-		/* this is the initializer */
+		/**
+		 * The InitializerTwoD object constructor creates a renderer for the visualization.  
+		 * As a rule of thumb, it is best to initialize the visualization within an InitializerTwoD renderer
+		 * so that all visualizations can be handled efficiently and properly encapsulated.  Only
+		 * one visualization can be displayed at any one time.
+		 * <p>
+		 * To add a visualization, use the addVisualizer method.
+		 * 
+		 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
+		 * @param	w width of initializer
+		 * @param	h height of initializer
+		 * @param	fill fill color (TODO)
+		 */
 		public function InitializerTwoD(w:int, h:int, fill:uint = 0x000000):void {
 			super();
 			//this.graphics.beginFill(fill);
@@ -32,11 +44,24 @@ package org.joelTong.dingX.twoD.initializers
 		}
 		
 		/* This function is used for adding visualizations 
-		 * timeToKill > timeToTransit
 		 * 
-		 * BUG: There is a memory leak problem when changing animations.  Use switching with care.
+		 * 
+		 * 
 		 * 
 		 * */
+		
+		 /**
+		  * This function adds a new visualizer to the initializer.  If there is more than 1 visualizer,
+		  * the transition function will be called and the existing visualization deleted.
+		  * To facilitate efficient memory management, it is recommended that you place all visualizations
+		  * intended for use in an array and call the addVisualizer() function when you need to use it.
+		  * <p>
+		  * BUG: There is a memory leak problem when changing animations.  Use switching with care.
+		  * <p>
+		  * @param	visualizer2D visualizer to use.  Must be 2D.
+		  * @param	timeToKill  Time to kill current visualization.  NOTE: timeToKill > timeToTransit.
+		  * @param	timeToTransit Time to transit to next visualization.  NOTE: timeToKill > timeToTransit.
+		  */
 		public function addVisualizer(visualizer2D:Sprite, timeToKill:Number = 2, 
 										timeToTransit:Number = 1):void {
 			if (visualizers.length == 0) {
@@ -51,7 +76,7 @@ package org.joelTong.dingX.twoD.initializers
 			}
 		}
 		
-		/* Used with addVisualizer() */
+		/* Used with addVisualizer() for transition purposes. */
 		private function hideAway():void {
 			this.removeChildAt(0);
 			this.visualizers = this.visualizers.splice(1, 1);		

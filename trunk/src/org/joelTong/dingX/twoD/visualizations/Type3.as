@@ -59,6 +59,12 @@ package org.joelTong.dingX.twoD.visualizations
 	 * @author JOELTONG
 	 * joel [dot] tong [at] gmail [dot] com
 	 */
+	
+	 /**
+	  * The class Type3 creates a linear bar visualization made up of particles.  Particles
+	  * are thrown up like a fountain according to magnitude of beat.  Number of particles emitted
+	  * depends also on the magnitude of sound output according to frequency.
+	  */
 	public class Type3 extends Sprite {
 		
 		private var _w:int;
@@ -79,9 +85,32 @@ package org.joelTong.dingX.twoD.visualizations
 		
 		private var timer:Timer;
 		
-		
+		/**
+		 * The Type3 constructor creates an instance of a linear bar sound spectrum analyzer
+		 * in the form of particle fountains.  It features a color mode that can be set by passing
+		 * in an instance of the ColorPattern object.
+		 * To use visualization, add it to an InitializerTwoD object.
+		 * 
+		 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
+		 * @see package org.joelTong.dingX.common.palette.ColorPattern
+		 * @param	w width of visualization.
+		 * @param	h height of visualization.
+		 * @param	noChannels number of channels analyzed in sound spectrum.
+		 * @param	barH height of particle jet acceleration area and particle generation area.
+		 * @param	noParticles maximum number of particles emitted per channel.
+		 * @param	lifetime maximum lifetime of each particle.
+		 * @param	explosionThreshold magnitude of threshold, out of 100, to emit particles.  Useful
+		 * for beat detection.
+		 * @param	gravity Gravity imposed on particles.
+		 * @param	explosionExponent Maximum jet acceleration used.  Must be a negative number.
+		 * @param	fountainForce Maximum force of fountain.
+		 * @param	updateTime Time to refresh visualizer, in milliseconds.  Shorter time means
+		 * higher demand on CPU side.
+		 * @param	colorPattern The color scheme to use, passed as a ColorPattern object.
+		 */
 		public function Type3(w:int, h:int, noChannels:int = 10, barH:int = 20, noParticles:int = 400,
-								explosionThreshold:Number = 70, explosionExponent:int = 20, 
+								lifetime:Number = 5, explosionThreshold:Number = 70, gravity:int = 100,
+								explosionExponent:int = 20, fountainForce:int = -500, updateTime:int = 50,
 								colorPattern:ColorPattern = null):void {
 			super();
 			_w = w; 
@@ -120,15 +149,15 @@ package org.joelTong.dingX.twoD.visualizations
 				tempEmitter.addInitializer(new Position(tempRectZone));
 				tempEmitter.addInitializer(new ColorInit(colorPattern.getMinSpecificColor(i), 
 														colorPattern.getMaxSpecificColor(i)));
-				tempEmitter.addInitializer(new Lifetime(0, 5));
+				tempEmitter.addInitializer(new Lifetime(0, lifetime));
 				
 				tempEmitter.addAction(new Age());
 				tempEmitter.addAction(new Move());
 				tempEmitter.addAction(new Fade());
-				tempEmitter.addAction(new Accelerate(0, 100));
+				tempEmitter.addAction(new Accelerate(0, gravity));
 				tempEmitter.addAction(new DeathZone(new RectangleZone(0, _h, _w, _h + 20), false));
 				
-				var jet:Jet = new Jet(0, -500, tempRectZone);
+				var jet:Jet = new Jet(0, fountainForce, tempRectZone);
 				tempEmitter.addAction(jet);
 				jetStack.push(jet);
 				//tempEmitter.removeAction(jet);
@@ -137,7 +166,7 @@ package org.joelTong.dingX.twoD.visualizations
 				tempEmitter.start();
 			}			
 			
-			timer = new Timer(50, 0);
+			timer = new Timer(updateTime, 0);
 			timer.addEventListener(TimerEvent.TIMER, onTimer);
 			timer.start();
 		}
