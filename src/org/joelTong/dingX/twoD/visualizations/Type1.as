@@ -57,6 +57,13 @@ package org.joelTong.dingX.twoD.visualizations
 	 * joel [dot] tong [at] gmail [dot] com
 	 */
 	
+	 /**
+		 * This constructor creates a visualization made up of rounded particles.  
+		 * It is based on the Flint Particle system developed by Richard Lord.
+		 * To use visualization, add it to an InitializerTwoD object.
+		 * 
+		 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
+		 */
 	public class Type1 extends Sprite {
 		
 		private var _w:int;									//width of visualiser
@@ -71,7 +78,23 @@ package org.joelTong.dingX.twoD.visualizations
 		private var emitter:Array = new Array();
 		private var renderer:BitmapRenderer;
 		
-		
+		/**
+		 * This constructor creates a visualization made up of rounded particles.  
+		 * It is based on the Flint Particle system developed by Richard Lord.
+		 * To use visualization, add it to an InitializerTwoD object.
+		 * 
+		 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
+		 *
+		 * @param	w width of visualization
+		 * @param	h height of visualization
+		 * @param	noChannels number of channels analyzed in sound spectrum.
+		 * @param	noParticles  Number of particles emitted.
+		 * @param	explosionPower Power of explosion each time a beat is detected.
+		 * @param	explosionThreshold Threshold of explosion.  This is used to detect for beats.
+		 * @param	particleRadius Radius of the particle emitted.
+		 * @param	particleBlurRadius Blur radius of the particle.
+		 */
+
 		public function Type1(w:int, h:int, noChannels:uint = 5, noParticles:int = 50, 
 								explosionPower:Number = 1.7, explosionThreshold:int = 80,
 								particleRadius:int = 2, particleBlurRadius:int = 4):void {

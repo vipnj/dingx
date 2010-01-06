@@ -66,7 +66,7 @@ package
 			pattern.pushColor(new MinMaxColor32(0xFF00CCFF, 0xFF0099FF));
 			 
 			var initializer:InitializerTwoD = new InitializerTwoD(stage.stageWidth, stage.stageHeight);
-			initializer.addVisualizer(new Type3(stage.stageWidth, stage.stageHeight, 30, 50, 200,60,20,pattern));
+			initializer.addVisualizer(new Type3(550,400));
 			addChild(initializer);
 			
 			

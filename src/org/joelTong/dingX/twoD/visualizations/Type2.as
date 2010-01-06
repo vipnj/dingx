@@ -60,6 +60,14 @@ package org.joelTong.dingX.twoD.visualizations
 	 * joel [dot] tong [at] gmail [dot] com
 	 */
 	
+	/**
+	 * This constructor creates a visualization made up of rectangular particles.
+	 * This was insipred by Type1 and is in  celebration of new year's day 2010.  It
+	 * is based on the Flint Particle system developed by Richard Lord.
+	 * To use visualization, add it to an InitializerTwoD object.
+	 * 
+	 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
+	 */
 	public class Type2 extends Sprite {
 		
 		private var _w:int;									//width of visualiser
@@ -75,7 +83,26 @@ package org.joelTong.dingX.twoD.visualizations
 		private var emitter:Array = new Array();
 		private var renderer:BitmapRenderer;
 		
-		
+		/**
+		 * This constructor creates a visualization made up of rectangular particles.
+		 * This was insipred by Type1 and is in  celebration of new year's day 2010.  It
+		 * is based on the Flint Particle system developed by Richard Lord.
+		 * To use visualization, add it to an InitializerTwoD object.
+		 * 
+		 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
+		 * @param	w width of visualization.
+		 * @param	h height of visualization.
+		 * @param	noChannels number of channels of sound spectrum to analyze.
+		 * @param	noParticles number of particles used per channel.  The more the merrier
+		 * but needs more processing power.
+		 * @param	explosionPower the power of the explosion coming from speaker.
+		 * @param	explosionThreshold Threshold of explosion.  This is set for beat detection.
+		 * @param	particleWidth Width of rectangle.  Note that it is a random value from
+		 * value specified.
+		 * @param	particleHeight Height of particle.Note that it is a random value from
+		 * value specified.  
+		 * @param	particleBlurRadius Blue filer radius used on particle.
+		 */
 		public function Type2(w:int, h:int, noChannels:uint = 5, noParticles:int = 40, 
 								explosionPower:Number = 1.7, explosionThreshold:int = 70,
 								particleWidth:int = 20, particleHeight:int = 20, 
