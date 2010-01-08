@@ -31,8 +31,6 @@ package
 	import org.joelTong.dingX.twoD.initializers.*;
 	import org.joelTong.dingX.twoD.visualizations.*;
 	
-	import org.papervision3d.cameras.*;
-	
 	/*
 	 * joeltong.org
 	 * @author JOELTONG
@@ -62,11 +60,14 @@ package
 			 * */
 			
 			var pattern:ColorPattern = new ColorPattern();
-			pattern.pushColor(new MinMaxColor32(0xFF0033CC, 0xFF0066CC));
+			/*pattern.pushColor(new MinMaxColor32(0xFF0033CC, 0xFF0066CC));
 			pattern.pushColor(new MinMaxColor32(0xFF00CCFF, 0xFF0099FF));
-			 
+			 */
+			pattern.pushColor(new MinMaxColor32(0xFFCC0000, 0xFFFF0000));
+			pattern.pushColor(new MinMaxColor32(0xFF00CC00, 0xFFFFFF00));
+			pattern.pushColor(new MinMaxColor32(0xFFCC00CC, 0xFFFF00FF));
 			var initializer:InitializerTwoD = new InitializerTwoD(stage.stageWidth, stage.stageHeight);
-			initializer.addVisualizer(new Type3(550,400));
+			initializer.addVisualizer(new Type3(550, 400,10,20,400,5,70,100,20,-500,50,pattern));
 			addChild(initializer);
 			
 			
