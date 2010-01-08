@@ -53,7 +53,7 @@ package
 			
 			//sample sound loading stuff
 			var sound:Sound = new Sound();
-			var req:URLRequest = new URLRequest("Song1.mp3");
+			var req:URLRequest = new URLRequest("http://joeltong.org/dingx/flash/nav/Song1.mp3");
 			sound.load(req);
 			sound.play(0, int.MAX_VALUE);
 			///////////////////////////////////////////////
