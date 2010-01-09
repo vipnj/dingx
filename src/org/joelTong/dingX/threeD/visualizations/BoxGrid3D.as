@@ -98,7 +98,7 @@ package org.joelTong.dingX.threeD.visualizations
 			SoundMixer.computeSpectrum(bytes, false, 0);
 			var initialRef:uint = 0;
 			for (var i:Number = 0; i < 512; i+= (512 /  (NO_CUBES_HEIGHT * NO_CUBES_WIDTH))) {
-                var n = bytes.readFloat();
+                var n:Number = bytes.readFloat();
 				if (initialRef < cubes.length) {
 					Tweener.addTween(cubes[initialRef], {alpha: Math.abs(n), scaleY: n, time:2, transition: "easeOut" } );
 
