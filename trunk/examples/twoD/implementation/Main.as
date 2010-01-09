@@ -21,10 +21,9 @@ package
 	import flash.display.MovieClip;
 	import flash.display.Sprite;
 	import flash.events.TimerEvent;
-	import flash.media.Sound;
-	import flash.net.URLRequest;
 	import flash.utils.Timer;
 	import flash.display.StageQuality;
+	import org.joelTong.dingX.common.lazy.SimpleSound;
 	import org.joelTong.dingX.common.palette.ColorPattern;
 	import org.joelTong.dingX.common.palette.MinMaxColor32;
 	
@@ -45,10 +44,8 @@ package
 			stage.quality = StageQuality.LOW;
 			
 			//sample sound loading stuff
-			var sound:Sound = new Sound();
-			var req:URLRequest = new URLRequest("Song1.mp3");
-			sound.load(req);
-			sound.play(0, int.MAX_VALUE);
+			var simpleSound:SimpleSound = new SimpleSound("Song1.mp3");
+
 			///////////////////////////////////////////////
 			
 			/*
@@ -60,14 +57,31 @@ package
 			 * */
 			
 			var pattern:ColorPattern = new ColorPattern();
+			var pattern2:ColorPattern = new ColorPattern();
 			/*pattern.pushColor(new MinMaxColor32(0xFF0033CC, 0xFF0066CC));
 			pattern.pushColor(new MinMaxColor32(0xFF00CCFF, 0xFF0099FF));
 			 */
-			pattern.pushColor(new MinMaxColor32(0xFFCC0000, 0xFFFF0000));
-			pattern.pushColor(new MinMaxColor32(0xFF00CC00, 0xFFFFFF00));
-			pattern.pushColor(new MinMaxColor32(0xFFCC00CC, 0xFFFF00FF));
-			var initializer:InitializerTwoD = new InitializerTwoD(stage.stageWidth, stage.stageHeight);
-			initializer.addVisualizer(new Type3(550, 400,10,20,400,5,70,100,20,-500,50,pattern));
+			pattern.pushColor(new MinMaxColor32(0xFFCCBB00, 0xFFFFBB00));
+			pattern.pushColor(new MinMaxColor32(0xFFCCCC00, 0xFFFFCC00));
+			pattern.pushColor(new MinMaxColor32(0xFFCCEE00, 0xFFFFEE00));
+			pattern.pushColor(new MinMaxColor32(0xFFCCCC00, 0xFFFFCC00));
+			
+			pattern2.pushColor(new MinMaxColor32(0xFF00CC00, 0xFF00CCFF));
+			pattern2.pushColor(new MinMaxColor32(0xFF00DD00, 0xFF00DDFF));
+			pattern2.pushColor(new MinMaxColor32(0xFF00EE00, 0xFF00EEFF));
+			pattern2.pushColor(new MinMaxColor32(0xFF00DD00, 0xFF00DDFF));
+			
+			
+			var compoundVisualizer:CompoundVisual2D = new CompoundVisual2D();
+			
+			var initializer:InitializerTwoD = new InitializerTwoD(stage.stageWidth, stage.stageHeight/2);
+			//compoundVisualizer.addChild(new Type3(550, 300, 10, 20, 400, 5, 70, 100, 10, -300, 50, pattern));
+			//compoundVisualizer.addChild(new Type3(550, 300, 5, 20, 400, 5, 85, 100, 20, -200, 50, pattern2));
+			//initializer.addVisualizer(compoundVisualizer);
+			//initializer.addVisualizer(new Type4(550,400));
+			compoundVisualizer.addVisualizer(new Type4(550, 300, 10, 50, 24,0.7, 5, 50, 80, false, 2, 2, pattern2));
+			compoundVisualizer.addVisualizer(new Type3(550, 300,10,5,200));
+			initializer.addVisualizer(compoundVisualizer);
 			addChild(initializer);
 			
 			

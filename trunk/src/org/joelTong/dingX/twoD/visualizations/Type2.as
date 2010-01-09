@@ -123,6 +123,7 @@ package org.joelTong.dingX.twoD.visualizations
 			renderer = new BitmapRenderer(new Rectangle(0, 0, _w, _h));
 			renderer.addFilter( new BlurFilter( _particleBlurRadius, _particleBlurRadius, 1 ) );
 			renderer.addFilter( new ColorMatrixFilter( [ 1,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0.99,0 ] ) );
+
 			
 			for (var i:uint = 0; i < _noChannels; i++) {
 				var tempEmitter:Emitter2D = new Emitter2D();
@@ -181,7 +182,7 @@ package org.joelTong.dingX.twoD.visualizations
 			SoundMixer.computeSpectrum(bytes, true, 0);
 			var initialRef:uint = 0;
 			for (var i:Number = 0; i < 512; i+= (512 /  _noChannels)) {
-				var n = bytes.readFloat();
+				var n:Number = bytes.readFloat();
 				if (initialRef < _noChannels) {
 					emitter[initialRef].counter = new Steady(Math.abs(new int(n * _noParticles)));
 					if ( (Math.abs(new int(n * 100))) > _explosionThreshold ) {

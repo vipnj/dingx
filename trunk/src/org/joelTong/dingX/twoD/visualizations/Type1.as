@@ -164,7 +164,7 @@ package org.joelTong.dingX.twoD.visualizations
 			SoundMixer.computeSpectrum(bytes, true, 0);
 			var initialRef:uint = 0;
 			for (var i:Number = 0; i < 512; i+= (512 /  _noChannels)) {
-				var n = bytes.readFloat();
+				var n:Number = bytes.readFloat();
 				if (initialRef < _noChannels) {
 					emitter[initialRef].counter = new Steady(Math.abs(new int(n * _noParticles)));
 					

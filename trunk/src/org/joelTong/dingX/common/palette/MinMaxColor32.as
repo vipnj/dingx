@@ -51,7 +51,7 @@ package org.joelTong.dingX.common.palette
 		/** 
 		 * Sets the minimum color, in ARGB.
 		 */
-		public function set minColor(color:uint) {
+		public function set minColor(color:uint):void {
 			colors[0] = color;
 		}
 		
@@ -65,7 +65,7 @@ package org.joelTong.dingX.common.palette
 		/**
 		 * Sets the maximum color, in ARGB.
 		 */
-		public function set maxColor(color:uint) {
+		public function set maxColor(color:uint):void {
 			colors[1] = color;
 		}
 		
