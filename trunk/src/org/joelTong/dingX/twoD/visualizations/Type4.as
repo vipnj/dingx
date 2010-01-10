@@ -88,6 +88,7 @@ package org.joelTong.dingX.twoD.visualizations
 		 * <p>Certain variables will dramatically alter performance.  Please refer to comments for more details.  
 		 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
 		 * @see package org.joelTong.dingX.common.palette.ColorPattern
+		 * 
 		 * @param	w width of visualizer
 		 * @param	h height of visualizer
 		 * @param	minParticles Minimum number of particles emitted.  Will affect update rate.
