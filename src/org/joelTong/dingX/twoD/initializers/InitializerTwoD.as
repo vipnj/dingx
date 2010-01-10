@@ -20,6 +20,13 @@ package org.joelTong.dingX.twoD.initializers
 	 * @author JOELTONG
 	 * joel [dot] tong [at] gmail [dot] com
 	 */
+	
+	 /**
+	  * The InitializerTwoD object constructor creates a renderer for the visualization.  
+	  * As a rule of thumb, it is best to initialize the visualization within an InitializerTwoD renderer
+	  * so that all visualizations can be handled efficiently and properly encapsulated.  Only
+	  * one visualization can be displayed at any one time.
+	  */
 	public class InitializerTwoD extends Sprite {
 		
 		public var visualizers:Array = new Array();
@@ -31,24 +38,16 @@ package org.joelTong.dingX.twoD.initializers
 		 * one visualization can be displayed at any one time.
 		 * <p>
 		 * To add a visualization, use the addVisualizer method.
-		 * 
-		 * @see org.joelTong.dingX.twoD.initializers.InitializerTwoD#addVisualizer()
-		 * @param	w width of initializer
-		 * @param	h height of initializer
-		 * @param	fill fill color (TODO)
+		 * <p>
+		 * @param	w width of container
+		 * @param	h height of container
+		 * @param	fill fill of container
 		 */
 		public function InitializerTwoD(w:int, h:int, fill:uint = 0x000000):void {
 			super();
 			//this.graphics.beginFill(fill);
 			//this.graphics.drawRect(0, 0, w, h);
 		}
-		
-		/* This function is used for adding visualizations 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * */
 		
 		 /**
 		  * This function adds a new visualizer to the initializer.  If there is more than 1 visualizer,
