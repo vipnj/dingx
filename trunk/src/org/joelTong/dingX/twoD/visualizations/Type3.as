@@ -129,7 +129,7 @@ package org.joelTong.dingX.twoD.visualizations
 			}
 			
 			renderer = new PixelRenderer(new Rectangle(0, 0, _w, _h));
-			renderer.addFilter(new BlurFilter(8, 8, 1));
+			renderer.addFilter(new BlurFilter(2, 2, 1));
 			renderer.addFilter( new ColorMatrixFilter( [
 					1,0,0,0,0,
 					0,1,0,0,0,

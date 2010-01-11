@@ -42,8 +42,11 @@ if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Cl
 </tr>
 </table>
 <p></p>
-  joeltong.org
-  <p></p>
+   The InitializerTwoD object constructor creates a renderer for the visualization.  
+   As a rule of thumb, it is best to initialize the visualization within an InitializerTwoD renderer
+   so that all visualizations can be handled efficiently and properly encapsulated.  Only
+   one visualization can be displayed at any one time.
+   <p></p>
 <br>
 <hr>
 </div>
@@ -117,34 +120,28 @@ showHideInherited();
    one visualization can be displayed at any one time.
    </p><p>
    To add a visualization, use the addVisualizer method.
-   
+   <p>
    <span class="label">Parameters</span>
 <table border="0" cellspacing="0" cellpadding="0">
 <tr>
-<td width="20px"></td><td><code><span class="label">w</span>:int</code> &mdash; width of initializer
+<td width="20px"></td><td><code><span class="label">w</span>:int</code> &mdash; width of container
    </td>
 </tr>
 <tr>
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">h</span>:int</code> &mdash; height of initializer
+<td width="20px"></td><td><code><span class="label">h</span>:int</code> &mdash; height of container
    </td>
 </tr>
 <tr>
 <td class="paramSpacer">&nbsp;</td>
 </tr>
 <tr>
-<td width="20px"></td><td><code><span class="label">fill</span>:uint</code> (default = <code>0x000000</code>)<code></code> &mdash; fill color (TODO)
+<td width="20px"></td><td><code><span class="label">fill</span>:uint</code> (default = <code>0x000000</code>)<code></code> &mdash; fill of container
    </td>
 </tr>
 </table>
-<p>
-<span class="label">See also</span>
-</p>
-<div class="seeAlso">
-<a href="../initializers/InitializerTwoD.html#addVisualizer()" target="">org.joelTong.dingX.twoD.initializers.InitializerTwoD.addVisualizer()</a>
-</div>
 </div>
 <a name="methodDetail"></a>
 <div class="detailSectionHeader">Method detail</div>
