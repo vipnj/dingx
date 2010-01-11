@@ -1,0 +1,208 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="../../../../../style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="../../../../../print.css" type="text/css" media="print">
+<meta content="Type5,org.joelTong.dingX.twoD.visualizations.Type5" name="keywords">
+<title>org.joelTong.dingX.twoD.visualizations.Type5</title>
+</head>
+<body>
+<script type="text/javascript" language="javascript" src="../../../../../asdoc.js"></script><script type="text/javascript" language="javascript" src="../../../../../cookies.js"></script><script type="text/javascript" language="javascript">
+<!--
+				asdocTitle = 'Type5 - API Documentation';
+				var baseRef = '../../../../../';
+				window.onload = configPage;
+			--></script>
+<table style="display:none" id="titleTable" cellspacing="0" cellpadding="0" class="titleTable">
+<tr>
+<td align="left" class="titleTableTitle">DingX</td><td align="right" class="titleTableTopNav"><a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../package-summary.html">All&nbsp;Packages</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../all-classes.html')" href="../../../../../class-summary.html">All&nbsp;Classes</a>&nbsp;|&nbsp;<a onclick="loadClassListFrame('../../../../../index-list.html')" href="../../../../../all-index-A.html">Index</a>&nbsp;|&nbsp;<a href="../../../../../index.html?org/joelTong/dingX/twoD/visualizations/Type5.html&amp;org/joelTong/dingX/twoD/visualizations/class-list.html" id="framesLink1">Frames</a><a onclick="parent.location=document.location" href="" style="display:none" id="noFramesLink1">No&nbsp;Frames</a></td><td rowspan="3" align="right" class="titleTableLogo"><img alt="Adobe Logo" title="Adobe Logo" class="logoImage" src="../../../../../images/logo.jpg"></td>
+</tr>
+<tr class="titleTableRow2">
+<td align="left" id="subTitle" class="titleTableSubTitle">Class&nbsp;Type5</td><td align="right" id="subNav" class="titleTableSubNav"><a href="#methodSummary">Methods</a></td>
+</tr>
+<tr class="titleTableRow3">
+<td colspan="2">&nbsp;</td>
+</tr>
+</table>
+<script type="text/javascript" language="javascript">
+<!--
+if (!isEclipse() || window.name != ECLIPSE_FRAME_NAME) {titleBar_setSubTitle("Class Type5"); titleBar_setSubNav(false,false,false,false,false,false,true,false,false,false,false,false,false,false);}
+--></script>
+<div class="MainContent">
+<table cellspacing="0" cellpadding="0" class="classHeaderTable">
+<tr>
+<td class="classHeaderTableLabel">Package</td><td><a onclick="javascript:loadClassListFrame('class-list.html')" href="package-detail.html">org.joelTong.dingX.twoD.visualizations</a></td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Class</td><td class="classSignature">public class Type5</td>
+</tr>
+<tr>
+<td class="classHeaderTableLabel">Inheritance</td><td class="inheritanceList">Type5 <img class="inheritArrow" alt="Inheritance" title="Inheritance" src="../../../../../images/inherit-arrow.gif"> flash.display.Sprite</td>
+</tr>
+</table>
+<p></p>
+   The class Type4 creates a typical line spectrum analyzer.  However, the "line" is drawn
+   using 512 particles and not the actual line drawing API found in Flash.  There are 512 emitters,
+   each emitter emitting a variable number of particles subject to changes in beat from the sound 
+   spectrum.  The rate of update is subject to a combination of variables, namely: 
+   minParticles, 
+   maxParticles, 
+   fps, 
+   lifeTime, 
+   blurX and blurY.
+   
+   <p></p>
+<br>
+<hr>
+</div>
+<a name="methodSummary"></a>
+<div class="summarySection">
+<div class="summaryTableTitle">Public Methods</div>
+<table id="summaryTableMethod" class="summaryTable " cellpadding="3" cellspacing="0">
+<tr>
+<th>&nbsp;</th><th colspan="2">Method</th><th class="summaryTableOwnerCol">Defined&nbsp;by</th>
+</tr>
+<tr class="">
+<td class="summaryTablePaddingCol">&nbsp;</td><td class="summaryTableInheritanceCol">&nbsp;</td><td class="summaryTableSignatureCol">
+<div class="summarySignature">
+<a class="signatureLink" href="#Type5()">Type5</a>(w:int, h:int, minParticles:int = 2, maxParticles:int = 4, fps:int = 24, lifeTime:Number = 0.5, gravity:int = 5, timerUpdate:int = 50, amplitude:int = 50, performFFT:Boolean = false, blurX:int = 2, blurY:int = 2, radiusDot:int = 10, colorPattern:<a href="../../common/palette/ColorPattern.html">ColorPattern</a> = null)</div>
+<div class="summaryTableDescription">
+   This constructor instantiates a Type4 object.</div>
+</td><td class="summaryTableOwnerCol">Type5</td>
+</tr>
+</table>
+</div>
+<script type="text/javascript" language="javascript">
+<!--
+showHideInherited();
+--></script>
+<div class="MainContent">
+<a name="constructorDetail"></a>
+<div class="detailSectionHeader">Constructor detail</div>
+<a name="Type5()"></a>
+<table cellspacing="0" cellpadding="0" class="detailHeader">
+<tr>
+<td class="detailHeaderName">Type5</td><td class="detailHeaderParens">()</td><td class="detailHeaderType">constructor</td>
+</tr>
+</table>
+<div class="detailBody">
+<code>public function Type5(w:int, h:int, minParticles:int = 2, maxParticles:int = 4, fps:int = 24, lifeTime:Number = 0.5, gravity:int = 5, timerUpdate:int = 50, amplitude:int = 50, performFFT:Boolean = false, blurX:int = 2, blurY:int = 2, radiusDot:int = 10, colorPattern:<a href="../../common/palette/ColorPattern.html">ColorPattern</a> = null)</code><p>
+   This constructor instantiates a Type4 object.  It features a color mode that can be set by passing
+   in an instance of the ColorPattern object.  To use visualization, add it to an InitializerTwoD object.
+      </p><p>Certain variables will dramatically alter performance.  Please refer to comments for more details.  
+   <span class="label">Parameters</span>
+<table border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td width="20px"></td><td><code><span class="label">w</span>:int</code> &mdash; width of visualizer
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">h</span>:int</code> &mdash; height of visualizer
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">minParticles</span>:int</code> (default = <code>2</code>)<code></code> &mdash; Minimum number of particles emitted.  Will affect update rate.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">maxParticles</span>:int</code> (default = <code>4</code>)<code></code> &mdash; Maximum number of particles emitted.  Will affect update rate.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">fps</span>:int</code> (default = <code>24</code>)<code></code> &mdash; Optimal FPS to achieve.  Will affect performance.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">lifeTime</span>:Number</code> (default = <code>0.5</code>)<code></code> &mdash; Maximum lifetime of particle.  Will affect performance.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">gravity</span>:int</code> (default = <code>5</code>)<code></code> &mdash; Gravity to use on particle in the Y-axis direction.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">timerUpdate</span>:int</code> (default = <code>50</code>)<code></code> &mdash; time to update sound spectrum data.  Will affect performance.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">amplitude</span>:int</code> (default = <code>50</code>)<code></code> &mdash; Amplitude of wave.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">performFFT</span>:Boolean</code> (default = <code>false</code>)<code></code> &mdash; To perform Fast Fourier Transform on sound spectrum.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blurX</span>:int</code> (default = <code>2</code>)<code></code> &mdash; blur in X axis direction.  Will affect performance significantly.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">blurY</span>:int</code> (default = <code>2</code>)<code></code> &mdash; blur in Y axis direction.  Will affect performance significantly.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">radiusDot</span>:int</code> (default = <code>10</code>)<code></code> &mdash; color pattern to use.  If not passed, it uses orange.
+   </td>
+</tr>
+<tr>
+<td class="paramSpacer">&nbsp;</td>
+</tr>
+<tr>
+<td width="20px"></td><td><code><span class="label">colorPattern</span>:<a href="../../common/palette/ColorPattern.html">ColorPattern</a></code> (default = <code>null</code>)<code></code></td>
+</tr>
+</table>
+<p>
+<span class="label">See also</span>
+</p>
+<div class="seeAlso">
+<a href="../initializers/InitializerTwoD.html#addVisualizer()" target="">org.joelTong.dingX.twoD.initializers.InitializerTwoD.addVisualizer()</a>
+<br>org.joelTong.dingX.common.palette.ColorPattern</div>
+</div>
+<br>
+<br>
+<hr>
+<br>
+<p></p>
+<center class="copyright"> 
+</center>
+</div>
+</body>
+</html>
+<!-- -->

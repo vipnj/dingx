@@ -3,7 +3,7 @@
   <pageTitle>DingX</pageTitle>
   <classPaths>C:\Documents and Settings\User\Desktop\Actionscript Classes\DingX\src</classPaths>
   <sourcesList />
-  <outputDirectory>C:\Documents and Settings\User\Desktop\dingxdocs</outputDirectory>
+  <outputDirectory>C:\Documents and Settings\User\Desktop\Actionscript Classes\DingX\docs</outputDirectory>
   <activeCompiler>1</activeCompiler>
   <extraOptions>-external-library-path="C:\Documents and Settings\User\Desktop\Actionscript Classes\exclude"</extraOptions>
 </docProject>
