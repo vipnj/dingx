@@ -28,7 +28,7 @@ package org.joelTong.dingX.common.palette
 	 */
 	public class MinMaxColor32 {
 		
-		private var colors:Array = new Array(0xFF000000, 0xFFFFFFFF);
+		private var colors:Array = new Array(0xFF000000, 0xFFFF0000);
 		
 		/**
 		 * The MinMaxColor32 constructor creates an object storing 2 color values per channel used - 
